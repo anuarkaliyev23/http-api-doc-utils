@@ -10,5 +10,5 @@ interface ResponseDoc {
     var status: Int
     var body: String
     var description: String
-    var headers: MutableMap<String, String>
+    var headers: Map<String, String>
 }

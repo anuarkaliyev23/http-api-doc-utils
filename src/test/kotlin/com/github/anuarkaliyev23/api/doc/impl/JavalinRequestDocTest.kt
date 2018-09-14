@@ -3,9 +3,10 @@ package com.github.anuarkaliyev23.api.doc.impl
 import com.github.anuarkaliyev23.api.doc.HttpRequestMethod
 import com.github.anuarkaliyev23.api.doc.interfaces.RequestDoc
 import com.github.anuarkaliyev23.api.doc.interfaces.ResponseDoc
+import io.javalin.security.Role
 import org.junit.jupiter.api.Test
 
-class SimpleRequestDocTest {
+class JavalinRequestDocTest {
 
     @Test
     fun test() {
@@ -23,9 +24,9 @@ class SimpleRequestDocTest {
         val description = "This method is used to get information about specific user"
 
         val failResponses = ArrayList<ResponseDoc>()
+        val roles = listOf<Role>(JavalinRoles.ADMIN, JavalinRoles.INACTIVE, JavalinRoles.INACTIVE)
 
-        val request : RequestDoc = SimpleRequestDoc(method = requestMethod, path = requstPath, headers = requestHeaders, body = requestBody, successResponse = response, description = description, failResponse = failResponses)
+        val request : RequestDoc = JavalinRequestDoc(method = requestMethod, path = requstPath, headers = requestHeaders, body = requestBody, successResponse = response, description = description, failResponse = failResponses, permittedRoles = roles)
         println(request)
     }
-
 }

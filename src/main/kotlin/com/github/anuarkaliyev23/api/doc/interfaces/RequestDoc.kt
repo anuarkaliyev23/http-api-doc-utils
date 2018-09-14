@@ -11,8 +11,9 @@ import com.github.anuarkaliyev23.api.doc.HttpRequestMethod
 interface RequestDoc {
     var method: HttpRequestMethod
     var path: String
-    var headers: MutableMap<String, String>
+    var headers: Map<String, String>
     var body: String
     var description: String
     var successResponse: ResponseDoc
+    var failResponse: List<ResponseDoc>
 }

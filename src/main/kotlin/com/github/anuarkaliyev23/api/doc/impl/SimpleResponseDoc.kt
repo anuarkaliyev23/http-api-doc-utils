@@ -11,4 +11,4 @@ import com.github.anuarkaliyev23.api.doc.interfaces.ResponseDoc
 data class SimpleResponseDoc(override var status: Int,
                         override var body: String,
                         override var description: String,
-                        override var headers: MutableMap<String, String>) : ResponseDoc
+                        override var headers: Map<String, String>) : ResponseDoc
